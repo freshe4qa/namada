@@ -27,6 +27,7 @@ sleep 2
 PS3='Select an action: '
 options=(
 "Install"
+"Create Validator"
 "Exit")
 select opt in "${options[@]}"
 do
@@ -118,6 +119,17 @@ sudo systemctl daemon-reload
 sudo systemctl enable namadad
 sudo systemctl restart namadad
 
+break
+;;
+
+"Create Validator")
+namada wallet address gen --alias my-account
+namada client init-validator \
+  --alias $VALIDATOR_ALIAS \
+  --source my-account \
+  --commission-rate 0.05 \
+  --max-commission-rate-change 0.01
+  
 break
 ;;
 
