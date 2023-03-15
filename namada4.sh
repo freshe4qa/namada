@@ -40,7 +40,7 @@ echo "============================================================"
 
 NAMADA_TAG=v0.14.2
 TM_HASH=v0.1.4-abciplus
-CHAIN_ID="public-testnet-4.0.16a35d789f4"
+CHAIN_ID="public-testnet-5.0.d25aa64ace6"
 
 if [ ! $ALIAS ]; then
 	read -p "Enter node name: " VALIDATOR_ALIAS
