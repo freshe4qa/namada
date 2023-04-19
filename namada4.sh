@@ -38,7 +38,7 @@ echo "============================================================"
 echo "Install start"
 echo "============================================================"
 
-NAMADA_TAG=v0.14.3
+NAMADA_TAG=v0.15.0
 TM_HASH=v0.1.4-abciplus
 CHAIN_ID="public-testnet-6.0.a0266444b06"
 
