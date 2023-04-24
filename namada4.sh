@@ -38,9 +38,9 @@ echo "============================================================"
 echo "Install start"
 echo "============================================================"
 
-NAMADA_TAG=v0.15.0
+NAMADA_TAG=v0.15.1
 TM_HASH=v0.1.4-abciplus
-CHAIN_ID="public-testnet-6.0.a0266444b06"
+CHAIN_ID="public-testnet-7.0.3c5a38dc983"
 
 if [ ! $ALIAS ]; then
 	read -p "Enter node name: " VALIDATOR_ALIAS
