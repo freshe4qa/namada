@@ -73,6 +73,16 @@ echo 'export GO111MODULE=on' >> $HOME/.bash_profile
 echo 'export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin' >> $HOME/.bash_profile && . $HOME/.bash_profile
 fi
 
+sudo apt install unzip -y
+
+apt -y remove protobuf-compiler
+cd $HOME && mkdir protoc
+cd protoc
+wget https://github.com/protocolbuffers/protobuf/releases/download/v23.0/protoc-23.0-linux-x86_64.zip
+unzip protoc-23.0-linux-x86_64.zip
+cp bin/protoc /usr/local/bin/
+cp -r include/google $HOME/namada/proto/
+
 # download binary
 cd $HOME && sudo rm -rf $HOME/namada 
 git clone https://github.com/anoma/namada 
