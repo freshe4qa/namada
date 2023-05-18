@@ -73,24 +73,12 @@ echo 'export GO111MODULE=on' >> $HOME/.bash_profile
 echo 'export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin' >> $HOME/.bash_profile && . $HOME/.bash_profile
 fi
 
-sudo apt install unzip -y
-
-apt -y remove protobuf-compiler
-cd $HOME && mkdir protoc
-cd protoc
-wget https://github.com/protocolbuffers/protobuf/releases/download/v23.0/protoc-23.0-linux-x86_64.zip
-unzip protoc-23.0-linux-x86_64.zip
-cp bin/protoc /usr/local/bin/
-cp -r include/google $HOME/namada/proto/
-
 # download binary
 cd $HOME && sudo rm -rf $HOME/namada 
-git clone https://github.com/anoma/namada 
-cd namada 
-git checkout $NAMADA_TAG
-make build-release
-sudo mv target/release/namada /usr/local/bin/
-sudo mv target/release/namada[c,n,w] /usr/local/bin/
+wget -O namada-v0.15.3-Linux-x86_64.tar.gz https://github.com/anoma/namada/releases/download/v0.15.3/namada-v0.15.3-Linux-x86_64.tar.gz
+tar xvf namada-v0.15.3-Linux-x86_64.tar.gz
+sudo mv namada-v0.15.3-Linux-x86_64/namada /usr/local/bin/
+sudo mv namada-v0.15.3-Linux-x86_64/namada[c,n,w] /usr/local/bin/
 
 cd $HOME && sudo rm -rf tendermint 
 git clone https://github.com/heliaxdev/tendermint 
